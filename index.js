@@ -1,4 +1,5 @@
 const http = require('http')
+const phrases = require('./data/phrases')
 
 const PORT = 1337
 const IP = '127.0.0.1'
