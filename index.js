@@ -7,6 +7,7 @@ const PORT = 1337
 const IP = '127.0.0.1'
 
 const server = http.createServer((request, response) => {
+  console.log(`SERVING ${request.method} to ${request.url}`)
 
   if (request.url === '/phrases') {
 
@@ -48,11 +49,19 @@ const server = http.createServer((request, response) => {
       response.writeHead(200)
       response.end(data)
     })
+  } else if (request.url === '/client/app.js' && request.method === 'GET') {
+    fs.readFile(__dirname + '/client/app.js', (err, data) => {
+      if (err) { console.error(err) }
+
+      response.setHeader('Content-Type', 'application/javascript;charset=utf-8')
+      response.writeHead(200)
+      response.end(data)
+    })
   } else {
     console.log('the server heard a request')
     response.end('here is the response')
   }
-
+  
 })
 
 console.log(`firing up the server at ${IP}:${PORT} ...`)
