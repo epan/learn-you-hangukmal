@@ -21,6 +21,7 @@ $('#submit-phrase').on('click', () => {
     data: JSON.stringify(phrase)
   })
   .done(() => {
+    console.log(`${phrase.korean} has been added to the list`)
     $('#korean-phrase').val('')
     $('#english-phrase').val('')
   })
