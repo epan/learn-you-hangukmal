@@ -1,4 +1,5 @@
 console.log('learn yewww kr')
+
 $('#show-all').on('click', () => {
   $.ajax({
     method: 'GET',
@@ -6,6 +7,22 @@ $('#show-all').on('click', () => {
   })
   .done((phrases) => {
     renderPhrases(phrases)
+  })
+})
+
+$('#submit-phrase').on('click', () => {
+  let phrase = {
+    korean: $('#korean-phrase').val(),
+    english: $('#english-phrase').val()
+  }
+  $.ajax({
+    method: 'POST',
+    url: 'http://127.0.0.1:1337/phrases',
+    data: JSON.stringify(phrase)
+  })
+  .done(() => {
+    $('#korean-phrase').val('')
+    $('#english-phrase').val('')
   })
 })
 
