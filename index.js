@@ -16,12 +16,13 @@ app.use(parser.json());
 // serve static assets from /clients
 app.use('/client', express.static(__dirname + '/client'));
 
-// GET /phrases
-app.get('/phrases', Phrases.getAll);
-app.get('/phrases/:id', Phrases.getOneById);
+// GET and POST /phrases
+app.route('/phrases')
+.get(Phrases.getAll)
+.post(Phrases.addOne);
 
-// POST /phrases
-app.post('/phrases', Phrases.addOne);
+// GET phrase by ID
+app.get('/phrases/:id', Phrases.getOneById);
 
 // serve index.html on GET /
 app.get('/', (req, res) => {
