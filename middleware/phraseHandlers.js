@@ -4,8 +4,11 @@ const getAll = (req, res) => {
   res.json(phrases);
 };
 
-const addOne = (phrase) => {
-  // TODO
+const addOne = (req, res) => {
+  let newPhrase = req.body;
+  newPhrase.id = phrases.length;
+  phrases.push(newPhrase);
+  res.json(newPhrase);
 };
 
 const getOneById = (id) => {
