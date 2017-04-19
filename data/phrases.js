@@ -9,7 +9,6 @@ module.exports = [
     korean: '감사합니다',
     english: 'Thank you.'
   },
-
   {
     id: 2,
     korean: '공항 가주새요',

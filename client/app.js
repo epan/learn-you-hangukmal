@@ -10,6 +10,17 @@ $('#show-all').on('click', () => {
   });
 });
 
+$('#show-one').on('click', () => {
+  let phraseId = Math.floor(Math.random() * 9);
+  $.ajax({
+    method: 'GET',
+    url: `http://127.0.0.1:1337/phrases/${phraseId}`
+  })
+  .done((phrase) => {
+    renderPhrases([phrase]);
+  });
+});
+
 $('#submit-phrase').on('click', () => {
   let phrase = {
     korean: $('#korean-phrase').val(),

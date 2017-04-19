@@ -18,6 +18,7 @@ app.use('/client', express.static(__dirname + '/client'));
 
 // GET /phrases
 app.get('/phrases', Phrases.getAll);
+app.get('/phrases/:id', Phrases.getOneById);
 
 // POST /phrases
 app.post('/phrases', Phrases.addOne);

@@ -11,8 +11,9 @@ const addOne = (req, res) => {
   res.json(newPhrase);
 };
 
-const getOneById = (id) => {
-  // TODO
+const getOneById = (req, res) => {
+  let phraseId = req.params.id;
+  res.json(phrases[phraseId]);
 };
 
 module.exports = {
