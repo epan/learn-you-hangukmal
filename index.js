@@ -5,6 +5,11 @@ const PORT = 1337;
 const IP = '127.0.0.1';
 const app = express();
 
+app.use((req, res, next) => {
+  console.log(`SERVING: ${req.method} to ${req.url}`);
+  next();
+});
+
 // serve static assets from /clients
 app.use('/client', express.static(__dirname + '/client'));
 
@@ -16,4 +21,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App is listening to ${IP}:${PORT}`);
 });
-
