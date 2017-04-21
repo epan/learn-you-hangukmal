@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Header from './Header.jsx';
+import Header from './Header';
+import PhraseForm from './PhraseForm';
+import PhraseContainer from './PhraseContainer';
 
 class App extends React.Component {
   constructor (props) {
@@ -15,9 +17,9 @@ class App extends React.Component {
       <div>
         <Header />
         <hr />
-        {/*<PhraseForm />*/}
+        <PhraseForm />
         <hr />
-        {/*<PhraseContainer />*/}
+        <PhraseContainer />
       </div>
     );
   }
