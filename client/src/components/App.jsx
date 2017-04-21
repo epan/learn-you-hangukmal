@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Header from './Header.jsx';
+
 class App extends React.Component {
   constructor (props) {
     super (props);
@@ -13,9 +15,9 @@ class App extends React.Component {
       <div>
         <Header />
         <hr />
-        <PhraseForm />
+        {/*<PhraseForm />*/}
         <hr />
-        <PhraseContainer />
+        {/*<PhraseContainer />*/}
       </div>
     );
   }
