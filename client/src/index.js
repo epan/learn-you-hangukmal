@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => (
-  <h1>annyeong something else from react!</h1>
-);
+import App from './components/App';
 
 ReactDOM.render(<App />, document.getElementById('app'));
